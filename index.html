@@ -14,34 +14,21 @@
 
   <style>
     /* ==========================================================================
-       CSS CUSTOM PROPERTIES & DYNAMIC COLOR THEMES
-       Default: Cyber Electric Cyan & Royal Sapphire Blue
+       CSS CUSTOM PROPERTIES & COLOR SCHEMES
        ========================================================================== */
     :root {
-      --bg-dark: #050813;
-      --bg-darker: #02040a;
-      --bg-card: rgba(10, 18, 35, 0.72);
-      --bg-card-hover: rgba(16, 28, 54, 0.85);
+      --bg-dark: #07090e;
+      --bg-darker: #040508;
+      --bg-card: rgba(15, 23, 42, 0.65);
+      --bg-card-hover: rgba(30, 41, 69, 0.75);
       --border-color: rgba(255, 255, 255, 0.08);
-
-      /* Primary Dynamic Theme Accents (Default: Electric Cyan & Sapphire) */
-      --accent-primary: #00f2fe;
-      --accent-secondary: #3b82f6;
-      --accent-tertiary: #6366f1;
-      --accent-gradient: linear-gradient(135deg, #00f2fe 0%, #3b82f6 50%, #6366f1 100%);
-      --border-color-glow: rgba(0, 242, 254, 0.4);
-      --glow-accent: 0 0 35px rgba(0, 242, 254, 0.35);
-      --glow-pill: 0 0 16px rgba(0, 242, 254, 0.4);
-      --gradient-text: linear-gradient(135deg, #ffffff 15%, #38bdf8 55%, #818cf8 90%);
+      --border-color-glow: rgba(168, 85, 247, 0.4);
       
-      --bg-radial-1: rgba(0, 242, 254, 0.09);
-      --bg-radial-2: rgba(59, 130, 246, 0.08);
-      --bg-radial-3: rgba(99, 102, 241, 0.05);
-
-      --particle-c1: rgba(0, 242, 254, 0.65);
-      --particle-c2: rgba(59, 130, 246, 0.55);
-      --particle-line: rgba(0, 242, 254, 0.2);
-
+      /* Dynamic Theme Accents */
+      --accent-primary: #a855f7;
+      --accent-secondary: #06b6d4;
+      --accent-gradient: linear-gradient(135deg, #a855f7 0%, #06b6d4 100%);
+      
       --accent-violet: #8b5cf6;
       --accent-purple: #a855f7;
       --accent-cyan: #06b6d4;
@@ -53,6 +40,10 @@
       --text-main: #f3f4f6;
       --text-muted: #9ca3af;
       --text-dim: #64748b;
+      
+      --glow-accent: 0 0 35px rgba(168, 85, 247, 0.3);
+      --glow-cyan: 0 0 35px rgba(6, 182, 212, 0.25);
+      --glow-pill: 0 0 16px rgba(168, 85, 247, 0.35);
 
       --font-heading: 'Outfit', sans-serif;
       --font-body: 'Space Grotesk', sans-serif;
@@ -62,114 +53,29 @@
       --transition-bounce: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
     }
 
-    /* 1. Theme: Cyber Cyan (Default) */
+    /* Alternate Theme Palettes */
     [data-theme="cyan"] {
-      --bg-dark: #050813;
-      --bg-darker: #02040a;
-      --bg-card: rgba(10, 18, 35, 0.72);
-      --bg-card-hover: rgba(16, 28, 54, 0.85);
       --accent-primary: #00f2fe;
-      --accent-secondary: #3b82f6;
-      --accent-tertiary: #6366f1;
-      --accent-gradient: linear-gradient(135deg, #00f2fe 0%, #3b82f6 50%, #6366f1 100%);
+      --accent-secondary: #4facfe;
+      --accent-gradient: linear-gradient(135deg, #00f2fe 0%, #4facfe 100%);
       --border-color-glow: rgba(0, 242, 254, 0.4);
-      --glow-accent: 0 0 35px rgba(0, 242, 254, 0.35);
-      --glow-pill: 0 0 16px rgba(0, 242, 254, 0.4);
-      --gradient-text: linear-gradient(135deg, #ffffff 15%, #38bdf8 55%, #818cf8 90%);
-      --bg-radial-1: rgba(0, 242, 254, 0.09);
-      --bg-radial-2: rgba(59, 130, 246, 0.08);
-      --bg-radial-3: rgba(99, 102, 241, 0.05);
-      --particle-c1: rgba(0, 242, 254, 0.65);
-      --particle-c2: rgba(59, 130, 246, 0.55);
-      --particle-line: rgba(0, 242, 254, 0.2);
+      --glow-accent: 0 0 35px rgba(0, 242, 254, 0.3);
     }
 
-    /* 2. Theme: Emerald Matrix & Mint */
     [data-theme="emerald"] {
-      --bg-dark: #040c08;
-      --bg-darker: #020604;
-      --bg-card: rgba(8, 24, 16, 0.72);
-      --bg-card-hover: rgba(14, 38, 26, 0.85);
       --accent-primary: #10b981;
-      --accent-secondary: #14b8a6;
-      --accent-tertiary: #06b6d4;
-      --accent-gradient: linear-gradient(135deg, #10b981 0%, #14b8a6 50%, #06b6d4 100%);
+      --accent-secondary: #06b6d4;
+      --accent-gradient: linear-gradient(135deg, #10b981 0%, #06b6d4 100%);
       --border-color-glow: rgba(16, 185, 129, 0.4);
-      --glow-accent: 0 0 35px rgba(16, 185, 129, 0.35);
-      --glow-pill: 0 0 16px rgba(16, 185, 129, 0.4);
-      --gradient-text: linear-gradient(135deg, #ffffff 15%, #34d399 55%, #06b6d4 90%);
-      --bg-radial-1: rgba(16, 185, 129, 0.09);
-      --bg-radial-2: rgba(20, 184, 166, 0.08);
-      --bg-radial-3: rgba(6, 182, 212, 0.05);
-      --particle-c1: rgba(16, 185, 129, 0.65);
-      --particle-c2: rgba(20, 184, 166, 0.55);
-      --particle-line: rgba(16, 185, 129, 0.2);
+      --glow-accent: 0 0 35px rgba(16, 185, 129, 0.3);
     }
 
-    /* 3. Theme: Cosmic Violet & Magenta */
-    [data-theme="purple"] {
-      --bg-dark: #080611;
-      --bg-darker: #040309;
-      --bg-card: rgba(18, 14, 34, 0.72);
-      --bg-card-hover: rgba(28, 22, 52, 0.85);
-      --accent-primary: #a855f7;
-      --accent-secondary: #8b5cf6;
-      --accent-tertiary: #ec4899;
-      --accent-gradient: linear-gradient(135deg, #a855f7 0%, #8b5cf6 50%, #ec4899 100%);
-      --border-color-glow: rgba(168, 85, 247, 0.4);
-      --glow-accent: 0 0 35px rgba(168, 85, 247, 0.35);
-      --glow-pill: 0 0 16px rgba(168, 85, 247, 0.4);
-      --gradient-text: linear-gradient(135deg, #ffffff 15%, #c084fc 55%, #ec4899 90%);
-      --bg-radial-1: rgba(168, 85, 247, 0.09);
-      --bg-radial-2: rgba(139, 92, 246, 0.08);
-      --bg-radial-3: rgba(236, 72, 153, 0.05);
-      --particle-c1: rgba(168, 85, 247, 0.65);
-      --particle-c2: rgba(236, 72, 153, 0.55);
-      --particle-line: rgba(168, 85, 247, 0.2);
-    }
-
-    /* 4. Theme: Sunset Coral & Ember Amber */
-    [data-theme="sunset"] {
-      --bg-dark: #0f0609;
-      --bg-darker: #080305;
-      --bg-card: rgba(28, 12, 18, 0.72);
-      --bg-card-hover: rgba(42, 18, 28, 0.85);
+    [data-theme="rose"] {
       --accent-primary: #f43f5e;
       --accent-secondary: #fb923c;
-      --accent-tertiary: #f59e0b;
-      --accent-gradient: linear-gradient(135deg, #f43f5e 0%, #fb923c 50%, #f59e0b 100%);
+      --accent-gradient: linear-gradient(135deg, #f43f5e 0%, #fb923c 100%);
       --border-color-glow: rgba(244, 63, 94, 0.4);
-      --glow-accent: 0 0 35px rgba(244, 63, 94, 0.35);
-      --glow-pill: 0 0 16px rgba(244, 63, 94, 0.4);
-      --gradient-text: linear-gradient(135deg, #ffffff 15%, #fb7185 55%, #f59e0b 90%);
-      --bg-radial-1: rgba(244, 63, 94, 0.09);
-      --bg-radial-2: rgba(251, 146, 60, 0.08);
-      --bg-radial-3: rgba(245, 158, 11, 0.05);
-      --particle-c1: rgba(244, 63, 94, 0.65);
-      --particle-c2: rgba(251, 146, 60, 0.55);
-      --particle-line: rgba(244, 63, 94, 0.2);
-    }
-
-    /* 5. Theme: Imperial Gold & Warm Bronze */
-    [data-theme="gold"] {
-      --bg-dark: #0d0a04;
-      --bg-darker: #070502;
-      --bg-card: rgba(26, 20, 10, 0.72);
-      --bg-card-hover: rgba(40, 30, 14, 0.85);
-      --accent-primary: #fbbf24;
-      --accent-secondary: #f59e0b;
-      --accent-tertiary: #f97316;
-      --accent-gradient: linear-gradient(135deg, #fbbf24 0%, #f59e0b 50%, #f97316 100%);
-      --border-color-glow: rgba(251, 191, 36, 0.4);
-      --glow-accent: 0 0 35px rgba(251, 191, 36, 0.35);
-      --glow-pill: 0 0 16px rgba(251, 191, 36, 0.4);
-      --gradient-text: linear-gradient(135deg, #ffffff 15%, #fcd34d 55%, #fb923c 90%);
-      --bg-radial-1: rgba(251, 191, 36, 0.09);
-      --bg-radial-2: rgba(245, 158, 11, 0.08);
-      --bg-radial-3: rgba(249, 115, 22, 0.05);
-      --particle-c1: rgba(251, 191, 36, 0.65);
-      --particle-c2: rgba(245, 158, 11, 0.55);
-      --particle-line: rgba(251, 191, 36, 0.2);
+      --glow-accent: 0 0 35px rgba(244, 63, 94, 0.3);
     }
 
     /* ==========================================================================
@@ -195,11 +101,10 @@
       overflow-x: hidden;
       position: relative;
       background-image: 
-        radial-gradient(circle at 15% 15%, var(--bg-radial-1) 0%, transparent 45%),
-        radial-gradient(circle at 85% 75%, var(--bg-radial-2) 0%, transparent 50%),
-        radial-gradient(circle at 50% 50%, var(--bg-radial-3) 0%, transparent 55%);
+        radial-gradient(circle at 15% 15%, rgba(139, 92, 246, 0.08) 0%, transparent 40%),
+        radial-gradient(circle at 85% 75%, rgba(6, 182, 212, 0.07) 0%, transparent 45%),
+        radial-gradient(circle at 50% 50%, rgba(236, 72, 153, 0.04) 0%, transparent 50%);
       background-attachment: fixed;
-      transition: background-color 0.4s ease;
     }
 
     /* Interactive Cursor Spotlight */
@@ -211,7 +116,7 @@
       height: 100vh;
       pointer-events: none;
       z-index: 1;
-      background: radial-gradient(600px circle at var(--mouse-x, 50vw) var(--mouse-y, 50vh), var(--border-color-glow), transparent 80%);
+      background: radial-gradient(600px circle at var(--mouse-x, 50vw) var(--mouse-y, 50vh), rgba(168, 85, 247, 0.07), transparent 80%);
       transition: background 0.1s ease;
     }
 
@@ -228,7 +133,7 @@
       border: 2px solid var(--bg-darker);
     }
     ::-webkit-scrollbar-thumb:hover {
-      background: linear-gradient(180deg, var(--accent-secondary), var(--accent-primary));
+      background: linear-gradient(180deg, var(--accent-pink), var(--accent-purple));
     }
 
     /* Particle Canvas */
@@ -252,7 +157,6 @@
       z-index: 0;
       opacity: 0.35;
       animation: orbDrift 22s infinite alternate ease-in-out;
-      transition: background 0.5s ease;
     }
     .orb-1 {
       top: 10%;
@@ -274,7 +178,7 @@
       left: 35%;
       width: 380px;
       height: 380px;
-      background: radial-gradient(circle, var(--accent-tertiary, var(--accent-primary)), transparent);
+      background: radial-gradient(circle, var(--accent-pink), transparent);
       animation-delay: -14s;
     }
 
@@ -326,8 +230,8 @@
       gap: 0.5rem;
       padding: 0.4rem 1.1rem;
       border-radius: 50px;
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid var(--border-color-glow);
+      background: rgba(168, 85, 247, 0.12);
+      border: 1px solid rgba(168, 85, 247, 0.35);
       color: var(--accent-primary);
       font-size: 0.85rem;
       font-weight: 600;
@@ -352,7 +256,7 @@
     }
 
     .gradient-text {
-      background: var(--gradient-text);
+      background: linear-gradient(135deg, #ffffff 15%, #c084fc 55%, #38bdf8 90%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       display: inline-block;
@@ -422,12 +326,12 @@
     .btn-primary {
       background: var(--accent-gradient);
       color: #fff;
-      box-shadow: 0 4px 20px var(--border-color-glow);
+      box-shadow: 0 4px 20px rgba(168, 85, 247, 0.4);
     }
 
     .btn-primary:hover {
       transform: translateY(-3px) scale(1.03);
-      box-shadow: 0 8px 32px var(--glow-accent);
+      box-shadow: 0 8px 32px rgba(168, 85, 247, 0.65);
     }
 
     .btn-secondary {
@@ -439,9 +343,9 @@
 
     .btn-secondary:hover {
       background: rgba(255, 255, 255, 0.12);
-      border-color: var(--accent-primary);
+      border-color: var(--accent-secondary);
       transform: translateY(-3px) scale(1.03);
-      box-shadow: 0 4px 20px var(--border-color-glow);
+      box-shadow: 0 4px 20px rgba(6, 182, 212, 0.3);
     }
 
     /* ==========================================================================
@@ -453,9 +357,9 @@
       left: 50%;
       transform: translateX(-50%);
       width: calc(100% - 3rem);
-      max-width: 1160px;
-      height: 68px;
-      background: rgba(8, 14, 28, 0.82);
+      max-width: 1140px;
+      height: 66px;
+      background: rgba(10, 15, 28, 0.75);
       backdrop-filter: blur(20px);
       -webkit-backdrop-filter: blur(20px);
       border: 1px solid rgba(255, 255, 255, 0.1);
@@ -471,7 +375,7 @@
 
     .navbar.scrolled {
       top: 0.8rem;
-      background: rgba(5, 8, 16, 0.94);
+      background: rgba(7, 9, 14, 0.9);
       border-color: var(--border-color-glow);
       box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6), var(--glow-accent);
     }
@@ -497,7 +401,7 @@
       font-weight: 900;
       font-size: 1.05rem;
       color: #fff;
-      box-shadow: 0 0 15px var(--border-color-glow);
+      box-shadow: 0 0 15px rgba(168, 85, 247, 0.5);
     }
 
     .nav-links {
@@ -539,58 +443,41 @@
     .nav-actions {
       display: flex;
       align-items: center;
-      gap: 0.9rem;
+      gap: 0.8rem;
     }
 
-    /* Enhanced Theme Palette Switcher */
-    .theme-palette-wrapper {
+    /* Theme Accent Switcher Dots */
+    .theme-switcher {
       display: flex;
       align-items: center;
-      gap: 0.45rem;
+      gap: 0.35rem;
       background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.1);
       border-radius: 30px;
-      padding: 0.3rem 0.65rem;
-    }
-
-    .theme-label {
-      font-size: 0.72rem;
-      text-transform: uppercase;
-      letter-spacing: 0.8px;
-      color: var(--text-dim);
-      font-weight: 600;
-      display: flex;
-      align-items: center;
-      gap: 0.3rem;
-      padding-right: 0.2rem;
+      padding: 0.25rem 0.5rem;
     }
 
     .theme-dot {
-      width: 17px;
-      height: 17px;
+      width: 14px;
+      height: 14px;
       border-radius: 50%;
       cursor: pointer;
-      border: 2px solid transparent;
-      outline: none;
-      transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.25s ease, border-color 0.2s ease;
-      position: relative;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
 
     .theme-dot:hover {
-      transform: scale(1.35);
+      transform: scale(1.3);
     }
 
     .theme-dot.active {
-      transform: scale(1.25);
-      border-color: #ffffff;
-      box-shadow: 0 0 12px currentColor;
+      transform: scale(1.2);
+      box-shadow: 0 0 8px currentColor;
     }
 
+    .dot-purple { background: #a855f7; color: #a855f7; }
     .dot-cyan { background: #00f2fe; color: #00f2fe; }
     .dot-emerald { background: #10b981; color: #10b981; }
-    .dot-purple { background: #a855f7; color: #a855f7; }
-    .dot-sunset { background: #f43f5e; color: #f43f5e; }
-    .dot-gold { background: #fbbf24; color: #fbbf24; }
+    .dot-rose { background: #f43f5e; color: #f43f5e; }
 
     .nav-cta {
       padding: 0.55rem 1.3rem;
@@ -616,9 +503,9 @@
       top: 5.2rem;
       left: 1.5rem;
       right: 1.5rem;
-      background: rgba(8, 14, 28, 0.96);
+      background: rgba(10, 15, 28, 0.96);
       backdrop-filter: blur(25px);
-      border: 1px solid var(--border-color-glow);
+      border: 1px solid rgba(255, 255, 255, 0.12);
       border-radius: 22px;
       padding: 1.8rem;
       z-index: 999;
@@ -667,10 +554,10 @@
       align-items: center;
       gap: 0.6rem;
       padding: 0.45rem 1.2rem;
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid var(--border-color-glow);
+      background: rgba(16, 185, 129, 0.1);
+      border: 1px solid rgba(16, 185, 129, 0.3);
       border-radius: 50px;
-      color: var(--accent-primary);
+      color: #34d399;
       font-size: 0.85rem;
       font-weight: 600;
       margin-bottom: 1.5rem;
@@ -680,20 +567,20 @@
       width: 8px;
       height: 8px;
       border-radius: 50%;
-      background: var(--accent-primary);
-      box-shadow: 0 0 10px var(--accent-primary);
+      background: #10b981;
+      box-shadow: 0 0 10px #10b981;
       animation: pulseAnim 2s infinite;
     }
 
     @keyframes pulseAnim {
-      0% { transform: scale(0.95); box-shadow: 0 0 0 0 var(--border-color-glow); }
-      70% { transform: scale(1); box-shadow: 0 0 0 10px rgba(0, 0, 0, 0); }
-      100% { transform: scale(0.95); box-shadow: 0 0 0 0 var(--border-color-glow); }
+      0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+      70% { transform: scale(1); box-shadow: 0 0 0 10px rgba(16, 185, 129, 0); }
+      100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
     }
 
     .hero-greeting {
       font-family: var(--font-mono);
-      color: var(--accent-primary);
+      color: var(--accent-secondary);
       font-size: 1.1rem;
       margin-bottom: 0.5rem;
       letter-spacing: 1px;
@@ -770,7 +657,7 @@
     }
 
     .stat-number span {
-      color: var(--accent-primary);
+      color: var(--accent-secondary);
     }
 
     .stat-label {
@@ -792,7 +679,7 @@
     .hero-interactive-card {
       width: 100%;
       max-width: 420px;
-      background: linear-gradient(145deg, rgba(14, 24, 46, 0.85), rgba(7, 12, 24, 0.95));
+      background: linear-gradient(145deg, rgba(23, 31, 56, 0.8), rgba(12, 16, 29, 0.95));
       border: 1px solid var(--border-color-glow);
       border-radius: 28px;
       padding: 2.2rem;
@@ -826,9 +713,9 @@
     .university-chip {
       font-family: var(--font-mono);
       font-size: 0.75rem;
-      color: var(--accent-primary);
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid var(--border-color-glow);
+      color: var(--accent-secondary);
+      background: rgba(6, 182, 212, 0.1);
+      border: 1px solid rgba(6, 182, 212, 0.3);
       padding: 0.25rem 0.6rem;
       border-radius: 6px;
     }
@@ -860,7 +747,7 @@
       position: relative;
       width: 100%;
       height: 100%;
-      background: #090e1a;
+      background: #0d1222;
       border-radius: 50%;
       display: flex;
       align-items: center;
@@ -869,7 +756,7 @@
       font-weight: 900;
       color: #fff;
       border: 3px solid #07090e;
-      box-shadow: inset 0 0 20px var(--border-color-glow);
+      box-shadow: inset 0 0 20px rgba(168, 85, 247, 0.4);
     }
 
     .hero-card-info {
@@ -885,7 +772,7 @@
 
     .hero-card-tag {
       font-size: 0.9rem;
-      color: var(--accent-primary);
+      color: var(--accent-teal);
       margin-top: 0.2rem;
     }
 
@@ -903,8 +790,8 @@
     }
 
     .code-comment { color: #64748b; }
-    .code-keyword { color: var(--accent-primary); font-weight: 600; }
-    .code-string { color: var(--accent-secondary); }
+    .code-keyword { color: #c084fc; font-weight: 600; }
+    .code-string { color: #38bdf8; }
     .code-func { color: #f43f5e; }
 
     .hero-card-pills {
@@ -926,9 +813,9 @@
     /* Floating badges on hero */
     .floating-card-badge {
       position: absolute;
-      background: rgba(10, 18, 35, 0.88);
+      background: rgba(15, 23, 42, 0.88);
       backdrop-filter: blur(12px);
-      border: 1px solid var(--border-color-glow);
+      border: 1px solid rgba(255, 255, 255, 0.15);
       padding: 0.7rem 1.1rem;
       border-radius: 16px;
       display: flex;
@@ -944,11 +831,13 @@
     .badge-top-right {
       top: -20px;
       right: -25px;
+      border-color: rgba(6, 182, 212, 0.4);
     }
 
     .badge-bottom-left {
       bottom: -15px;
       left: -25px;
+      border-color: var(--border-color-glow);
       animation-delay: -2.5s;
     }
 
@@ -985,11 +874,11 @@
     .quote-box {
       margin-top: 2rem;
       padding: 1.2rem 1.5rem;
-      background: rgba(255, 255, 255, 0.03);
+      background: rgba(168, 85, 247, 0.08);
       border-left: 4px solid var(--accent-primary);
       border-radius: 0 14px 14px 0;
       font-style: italic;
-      color: #e2e8f0;
+      color: #e9d5ff;
       font-size: 0.95rem;
     }
 
@@ -1017,10 +906,10 @@
       margin-bottom: 0.3rem;
     }
 
-    .icon-violet { background: rgba(0, 242, 254, 0.12); color: var(--accent-primary); border: 1px solid var(--border-color-glow); }
-    .icon-cyan { background: rgba(59, 130, 246, 0.12); color: var(--accent-secondary); border: 1px solid rgba(59, 130, 246, 0.3); }
-    .icon-pink { background: rgba(236, 72, 153, 0.12); color: #f472b6; border: 1px solid rgba(236, 72, 153, 0.3); }
-    .icon-amber { background: rgba(245, 158, 11, 0.12); color: #fbbf24; border: 1px solid rgba(245, 158, 11, 0.3); }
+    .icon-violet { background: rgba(139, 92, 246, 0.15); color: #c084fc; border: 1px solid rgba(139, 92, 246, 0.3); }
+    .icon-cyan { background: rgba(6, 182, 212, 0.15); color: #38bdf8; border: 1px solid rgba(6, 182, 212, 0.3); }
+    .icon-pink { background: rgba(236, 72, 153, 0.15); color: #f472b6; border: 1px solid rgba(236, 72, 153, 0.3); }
+    .icon-amber { background: rgba(245, 158, 11, 0.15); color: #fbbf24; border: 1px solid rgba(245, 158, 11, 0.3); }
 
     .about-feature-box h4 {
       font-size: 1.15rem;
@@ -1061,7 +950,7 @@
       background: var(--accent-gradient);
       border-color: transparent;
       color: #fff;
-      box-shadow: 0 0 20px var(--border-color-glow);
+      box-shadow: 0 0 20px rgba(168, 85, 247, 0.35);
     }
 
     .skills-grid {
@@ -1116,8 +1005,8 @@
 
     .badge-python { background: rgba(56, 189, 248, 0.15); color: #38bdf8; border: 1px solid rgba(56, 189, 248, 0.3); }
     .badge-html { background: rgba(249, 115, 22, 0.15); color: #fb923c; border: 1px solid rgba(249, 115, 22, 0.3); }
-    .badge-research { background: rgba(0, 242, 254, 0.15); color: var(--accent-primary); border: 1px solid var(--border-color-glow); }
-    .badge-workflow { background: rgba(16, 185, 129, 0.15); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.3); }
+    .badge-research { background: rgba(168, 85, 247, 0.15); color: #c084fc; border: 1px solid rgba(168, 85, 247, 0.3); }
+    .badge-workflow { background: rgba(16, 185, 129, 0.15); color: #34d399; border: 1px solid rgba(168, 185, 129, 0.3); }
 
     .skill-description {
       color: var(--text-muted);
@@ -1156,16 +1045,16 @@
     }
 
     .fill-python {
-      background: linear-gradient(90deg, #3b82f6, #00f2fe);
-      box-shadow: 0 0 12px rgba(0, 242, 254, 0.5);
+      background: linear-gradient(90deg, #3b82f6, #06b6d4);
+      box-shadow: 0 0 12px rgba(6, 182, 212, 0.5);
     }
     .fill-html {
       background: linear-gradient(90deg, #ea580c, #f59e0b);
       box-shadow: 0 0 12px rgba(245, 158, 11, 0.5);
     }
     .fill-research {
-      background: var(--accent-gradient);
-      box-shadow: 0 0 12px var(--border-color-glow);
+      background: linear-gradient(90deg, #8b5cf6, #ec4899);
+      box-shadow: 0 0 12px rgba(139, 92, 246, 0.5);
     }
     .fill-learning {
       background: linear-gradient(90deg, #10b981, #06b6d4);
@@ -1192,8 +1081,8 @@
     .learning-roadmap-card {
       margin-top: 3.5rem;
       padding: 2.2rem 2.8rem;
-      border: 1px dashed var(--border-color-glow);
-      background: linear-gradient(135deg, var(--bg-radial-1), var(--bg-radial-2));
+      border: 1px dashed rgba(168, 85, 247, 0.35);
+      background: linear-gradient(135deg, rgba(168, 85, 247, 0.08), rgba(6, 182, 212, 0.05));
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -1285,18 +1174,18 @@
     }
 
     .timeline-item.active-education .timeline-node {
-      border-color: var(--accent-primary);
-      box-shadow: 0 0 25px var(--accent-primary);
+      border-color: var(--accent-secondary);
+      box-shadow: 0 0 25px var(--accent-secondary);
       animation: pulseNode 2s infinite;
     }
 
     @keyframes pulseNode {
-      0%, 100% { transform: scale(1); box-shadow: 0 0 20px var(--accent-primary); }
-      50% { transform: scale(1.15); box-shadow: 0 0 35px var(--accent-primary); }
+      0%, 100% { transform: scale(1); box-shadow: 0 0 20px var(--accent-secondary); }
+      50% { transform: scale(1.15); box-shadow: 0 0 35px var(--accent-secondary); }
     }
 
     .timeline-item.active-education .timeline-node::after {
-      background: var(--accent-primary);
+      background: var(--accent-secondary);
     }
 
     .timeline-card {
@@ -1323,7 +1212,7 @@
       font-size: 0.82rem;
       padding: 0.3rem 0.8rem;
       border-radius: 30px;
-      background: rgba(255, 255, 255, 0.05);
+      background: rgba(168, 85, 247, 0.15);
       border: 1px solid var(--border-color-glow);
       color: var(--accent-primary);
       font-weight: 600;
@@ -1331,7 +1220,7 @@
 
     .degree-title {
       font-size: 1.05rem;
-      color: var(--accent-primary);
+      color: var(--accent-secondary);
       font-weight: 600;
       margin-bottom: 0.8rem;
       display: flex;
@@ -1362,7 +1251,7 @@
     }
 
     .highlight-icon {
-      color: var(--accent-primary);
+      color: var(--accent-teal);
       font-size: 0.9rem;
     }
 
@@ -1513,8 +1402,7 @@
       width: 44px;
       height: 44px;
       border-radius: 12px;
-      background: rgba(255, 255, 255, 0.06);
-      border: 1px solid var(--border-color-glow);
+      background: rgba(168, 85, 247, 0.15);
       color: var(--accent-primary);
       display: flex;
       align-items: center;
@@ -1549,7 +1437,7 @@
     }
 
     .copy-email-btn:hover {
-      background: var(--border-color-glow);
+      background: rgba(168, 85, 247, 0.2);
       border-color: var(--accent-primary);
       color: #fff;
     }
@@ -1587,11 +1475,11 @@
     }
 
     .social-pill:hover {
-      background: rgba(255, 255, 255, 0.1);
+      background: rgba(168, 85, 247, 0.2);
       border-color: var(--accent-primary);
       color: #fff;
       transform: translateY(-3px);
-      box-shadow: 0 5px 15px var(--border-color-glow);
+      box-shadow: 0 5px 15px rgba(168, 85, 247, 0.3);
     }
 
     /* Contact Form */
@@ -1628,7 +1516,7 @@
     .form-control:focus {
       border-color: var(--accent-primary);
       background: rgba(15, 23, 42, 0.9);
-      box-shadow: 0 0 20px var(--border-color-glow);
+      box-shadow: 0 0 20px rgba(168, 85, 247, 0.25);
     }
 
     textarea.form-control {
@@ -1649,7 +1537,7 @@
       padding: 4.5rem 0 2rem;
       border-top: 1px solid rgba(255, 255, 255, 0.08);
       position: relative;
-      background: linear-gradient(180deg, transparent, rgba(3, 5, 10, 0.95));
+      background: linear-gradient(180deg, transparent, rgba(4, 5, 8, 0.95));
     }
 
     .footer-content {
@@ -1689,7 +1577,7 @@
     }
 
     .footer-nav a:hover {
-      color: var(--accent-primary);
+      color: var(--accent-secondary);
     }
 
     .footer-bottom {
@@ -1721,9 +1609,8 @@
     .back-to-top-btn:hover {
       background: var(--accent-primary);
       border-color: var(--accent-primary);
-      color: #000;
       transform: translateY(-4px);
-      box-shadow: 0 0 20px var(--border-color-glow);
+      box-shadow: 0 0 20px rgba(168, 85, 247, 0.6);
     }
 
     /* Toast Notification */
@@ -1731,9 +1618,9 @@
       position: fixed;
       bottom: 2rem;
       right: 2rem;
-      background: rgba(10, 18, 35, 0.95);
+      background: rgba(15, 23, 42, 0.95);
       backdrop-filter: blur(16px);
-      border: 1px solid var(--border-color-glow);
+      border: 1px solid var(--accent-primary);
       padding: 1rem 1.6rem;
       border-radius: 16px;
       color: #fff;
@@ -1844,9 +1731,6 @@
         flex-direction: column;
         text-align: center;
       }
-      .theme-label {
-        display: none;
-      }
     }
 
     @media (max-width: 480px) {
@@ -1881,7 +1765,7 @@
 
   <!-- Toast Notification -->
   <div id="toast" class="toast-notification">
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
     <span id="toast-text">Email copied to clipboard!</span>
   </div>
 
@@ -1903,17 +1787,12 @@
     </ul>
 
     <div class="nav-actions">
-      <!-- 5-Preset Interactive Theme Switcher -->
-      <div class="theme-palette-wrapper">
-        <span class="theme-label">
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a10 10 0 0 1 10 10 10 10 0 0 1-10 10"></path></svg>
-          <span>Color</span>
-        </span>
-        <button type="button" class="theme-dot dot-cyan active" data-color="cyan" title="Electric Cyber Cyan & Blue (Default)" aria-label="Cyan theme"></button>
-        <button type="button" class="theme-dot dot-emerald" data-color="emerald" title="Matrix Emerald & Mint" aria-label="Emerald theme"></button>
-        <button type="button" class="theme-dot dot-purple" data-color="purple" title="Cosmic Violet & Magenta" aria-label="Purple theme"></button>
-        <button type="button" class="theme-dot dot-sunset" data-color="sunset" title="Sunset Coral & Amber" aria-label="Sunset theme"></button>
-        <button type="button" class="theme-dot dot-gold" data-color="gold" title="Imperial Gold & Bronze" aria-label="Gold theme"></button>
+      <!-- Theme Accent Switcher Dots -->
+      <div class="theme-switcher" title="Switch Theme Glow Accent">
+        <span class="theme-dot dot-purple active" data-color="purple"></span>
+        <span class="theme-dot dot-cyan" data-color="cyan"></span>
+        <span class="theme-dot dot-emerald" data-color="emerald"></span>
+        <span class="theme-dot dot-rose" data-color="rose"></span>
       </div>
 
       <a href="#contact" class="btn btn-primary nav-cta">Let's Talk</a>
@@ -1930,16 +1809,6 @@
     <a href="#education" class="mobile-nav-link">Education Timeline</a>
     <a href="#hobbies" class="mobile-nav-link">Hobbies &amp; Passions</a>
     <a href="#contact" class="mobile-nav-link">Contact Me</a>
-    <div style="display: flex; align-items: center; justify-content: space-between; padding-top: 0.6rem;">
-      <span style="font-size: 0.85rem; color: var(--text-dim); text-transform: uppercase; font-weight: 600;">Theme:</span>
-      <div class="theme-palette-wrapper" style="background: rgba(255,255,255,0.06);">
-        <button type="button" class="theme-dot dot-cyan" data-color="cyan" title="Cyan"></button>
-        <button type="button" class="theme-dot dot-emerald" data-color="emerald" title="Emerald"></button>
-        <button type="button" class="theme-dot dot-purple" data-color="purple" title="Purple"></button>
-        <button type="button" class="theme-dot dot-sunset" data-color="sunset" title="Sunset"></button>
-        <button type="button" class="theme-dot dot-gold" data-color="gold" title="Gold"></button>
-      </div>
-    </div>
   </div>
 
   <!-- ==========================================================================
@@ -1977,7 +1846,7 @@
             </a>
             <a href="#contact" class="btn btn-secondary">
               <span>Get In Touch</span>
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
             </a>
           </div>
 
@@ -2003,7 +1872,7 @@
             
             <!-- Floating Badges -->
             <div class="floating-card-badge badge-top-right">
-              <span style="color: var(--accent-primary); font-size: 1.1rem;">⚡</span>
+              <span style="color: #38bdf8; font-size: 1.1rem;">⚡</span>
               <div>
                 <div style="font-size: 0.72rem; color: var(--text-dim);">UNIVERSITY</div>
                 <div>NST-RU Campus</div>
@@ -2011,7 +1880,7 @@
             </div>
 
             <div class="floating-card-badge badge-bottom-left">
-              <span style="color: var(--accent-secondary); font-size: 1.1rem;">🎯</span>
+              <span style="color: #a855f7; font-size: 1.1rem;">🎯</span>
               <div>
                 <div style="font-size: 0.72rem; color: var(--text-dim);">FOCUS</div>
                 <div>Tech, Research &amp; Sports</div>
@@ -2240,7 +2109,7 @@
           <div>
             <div class="skill-header">
               <div class="skill-title-group">
-                <div class="skill-icon-box" style="background: rgba(0, 242, 254, 0.15); color: var(--accent-primary);">
+                <div class="skill-icon-box" style="background: rgba(168, 85, 247, 0.15); color: #c084fc;">
                   <!-- Research Icon -->
                   <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
                 </div>
@@ -2328,8 +2197,8 @@
           <p>Actively expanding my knowledge base during my first year at NST-RU.</p>
         </div>
         <div class="roadmap-badges">
-          <span class="roadmap-badge"><span style="color: var(--accent-primary)">●</span> Data Structures &amp; OOP</span>
-          <span class="roadmap-badge"><span style="color: var(--accent-secondary)">●</span> Advanced CSS &amp; Flex/Grid</span>
+          <span class="roadmap-badge"><span style="color: var(--accent-cyan)">●</span> Data Structures &amp; OOP</span>
+          <span class="roadmap-badge"><span style="color: var(--accent-purple)">●</span> Advanced CSS &amp; Flex/Grid</span>
           <span class="roadmap-badge"><span style="color: var(--accent-pink)">●</span> JavaScript ES6+</span>
           <span class="roadmap-badge"><span style="color: var(--accent-amber)">●</span> Git &amp; Open Source</span>
         </div>
@@ -2409,7 +2278,7 @@
               <span class="timeline-period">Graduated with Distinction</span>
             </div>
 
-            <div class="degree-title" style="color: var(--accent-secondary);">
+            <div class="degree-title" style="color: var(--accent-purple);">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
               <span>Foundational Sciences &amp; Analytical Studies</span>
             </div>
@@ -2583,7 +2452,7 @@
               </div>
 
               <div class="contact-item">
-                <div class="contact-icon">
+                <div class="contact-icon" style="background: rgba(6, 182, 212, 0.15); color: var(--accent-cyan);">
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
                 </div>
                 <div>
@@ -2593,7 +2462,7 @@
               </div>
 
               <div class="contact-item">
-                <div class="contact-icon">
+                <div class="contact-icon" style="background: rgba(16, 185, 129, 0.15); color: var(--accent-emerald);">
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
                 </div>
                 <div>
@@ -2727,67 +2596,20 @@
       });
 
       /* ------------------------------------------------------------------------
-         2. THEME ACCENT SWITCHER & LOCAL STORAGE PERSISTENCE
+         2. THEME ACCENT SWITCHER
          ------------------------------------------------------------------------ */
       const themeDots = document.querySelectorAll('.theme-dot');
-      let particleColor1 = 'rgba(0, 242, 254, 0.65)';
-      let particleColor2 = 'rgba(59, 130, 246, 0.55)';
-      let particleLine = 'rgba(0, 242, 254, 0.2)';
-
-      function updateParticleThemeVars() {
-        const rootStyle = getComputedStyle(document.documentElement);
-        particleColor1 = rootStyle.getPropertyValue('--particle-c1').trim() || 'rgba(0, 242, 254, 0.65)';
-        particleColor2 = rootStyle.getPropertyValue('--particle-c2').trim() || 'rgba(59, 130, 246, 0.55)';
-        particleLine = rootStyle.getPropertyValue('--particle-line').trim() || 'rgba(0, 242, 254, 0.2)';
-        
-        if (typeof particles !== 'undefined' && particles.length > 0) {
-          particles.forEach(p => {
-            p.color = Math.random() > 0.5 ? particleColor1 : particleColor2;
-          });
-        }
-      }
-
-      function setTheme(color, showNotification = true) {
-        document.documentElement.setAttribute('data-theme', color);
-        try {
-          localStorage.setItem('kavya-portfolio-theme', color);
-        } catch (e) {}
-
-        themeDots.forEach(d => {
-          if (d.getAttribute('data-color') === color) {
-            d.classList.add('active');
-          } else {
-            d.classList.remove('active');
-          }
-        });
-
-        updateParticleThemeVars();
-
-        const themeNames = {
-          cyan: 'Electric Cyber Cyan & Blue',
-          emerald: 'Matrix Emerald & Mint',
-          purple: 'Cosmic Violet & Magenta',
-          sunset: 'Sunset Coral & Amber',
-          gold: 'Imperial Gold & Bronze'
-        };
-
-        if (showNotification) {
-          showToast(`Switched theme to ${themeNames[color] || color.toUpperCase()}! ✨`);
-        }
-      }
-
-      // Check saved theme or default to cyan
-      let initialTheme = 'cyan';
-      try {
-        initialTheme = localStorage.getItem('kavya-portfolio-theme') || 'cyan';
-      } catch (e) {}
-      setTheme(initialTheme, false);
-
       themeDots.forEach(dot => {
-        dot.addEventListener('click', (e) => {
-          e.preventDefault();
+        dot.addEventListener('click', () => {
+          themeDots.forEach(d => d.classList.remove('active'));
+          dot.classList.add('active');
           const color = dot.getAttribute('data-color');
-          setTheme(color, true);
+          if (color === 'purple') {
+            document.documentElement.removeAttribute('data-theme');
+          } else {
+            document.documentElement.setAttribute('data-theme', color);
+          }
+          showToast(`Switched accent theme to ${color.toUpperCase()}! ✨`);
         });
       });
 
@@ -2868,7 +2690,7 @@
           this.baseY = this.y;
           this.speedX = (Math.random() - 0.5) * 0.8;
           this.speedY = (Math.random() - 0.5) * 0.8;
-          this.color = Math.random() > 0.5 ? particleColor1 : particleColor2;
+          this.color = Math.random() > 0.5 ? 'rgba(168, 85, 247, 0.55)' : 'rgba(6, 182, 212, 0.45)';
         }
 
         update() {
@@ -2923,8 +2745,8 @@
             let distance = Math.sqrt(dx * dx + dy * dy);
 
             if (distance < maxDist) {
-              let opacity = (1 - (distance / maxDist)) * 0.22;
-              ctx.strokeStyle = particleLine.replace(/[\d\.]+\)$/, `${opacity})`);
+              let opacity = 1 - (distance / maxDist);
+              ctx.strokeStyle = `rgba(168, 85, 247, ${opacity * 0.18})`;
               ctx.lineWidth = 0.8;
               ctx.beginPath();
               ctx.moveTo(particles[a].x, particles[a].y);

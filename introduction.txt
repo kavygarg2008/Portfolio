@@ -1,0 +1,20 @@
+Name :
+Kavya garg
+
+Class:
+1st year
+
+University:
+Nst-RU
+
+Skills:
+Basic python 
+Basic html
+Researching
+
+Hobbies:
+Badminton , Cricket , Cooking , Swimmming , Singing
+
+What I want ?
+one file - index.html
+which contains html and css with full portfolio
